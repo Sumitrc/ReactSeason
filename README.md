@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Description
+The project is a React application designed to display information about the current season based on the user's geolocation. It consists of several components: `App`, `SeasonDisplay`, and `Spinner`. The `App` component is a class-based React component that manages the state of the latitude (`lat`) and any error messages (`errorMessage`). The `componentDidMount` lifecycle method is used to retrieve the user's geolocation using the browser's `navigator.geolocation.getCurrentPosition` method. Depending on whether the geolocation request is successful or not, the `renderContent` method is called to conditionally render either an error message, the `SeasonDisplay` component (which shows the season based on the latitude), or a loading spinner (`Spinner`). The `App` component is then rendered in the DOM using `ReactDOM.render`. This project demonstrates how to use React's lifecycle methods and conditional rendering to create a dynamic user interface based on real-time data.
+
 ## Available Scripts
 
 In the project directory, you can run:
