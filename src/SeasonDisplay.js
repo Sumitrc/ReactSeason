@@ -23,10 +23,7 @@ const getSeason = (lat, month) => {
 const SeasonDisplay = (props) => {
     const season = getSeason(props.lat, new Date().getMonth());
 
-    // Check if season is valid before destructuring
-    if (!seasonConfig[season]) {
-        return <div>Error: Season not found</div>;
-    }
+    
 
     const { text, iconName } = seasonConfig[season];
 

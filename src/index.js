@@ -13,16 +13,24 @@ class App extends React.Component{
                 this.setState({errorMessage:err.message})
         );
     }
-    render()
-    {//must call must have return a jsx
+    renderContent(){
+        if (this.state.errorMessage && !this.state.lat){
+            return <div> Error:{this.state.errorMessage}</div>
+        }
+        if (!this.state.errorMessage && this.state.lat){
+            return <SeasonDisplay lat={this.state.lat}/>
+        }
+        return <Spinner/>;
+    }
+    
+    render() {
+   return(
+    <div className ="border red">
+        {this.renderContent()}
+        </div>
+   );
    
-    if (this.state.errorMessage && !this.state.lat){
-        return <div> Error:{this.state.errorMessage}</div>
-    }
-    if (!this.state.errorMessage && this.state.lat){
-        return <SeasonDisplay lat={this.state.lat}/>
-    }
-    return <Spinner/>;
+
 }
 }
 ReactDOM.render(
